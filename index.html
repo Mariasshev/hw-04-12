@@ -4,20 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        .car-info {
-            display: inline-block;
-            margin: 10px 0 10px 10px;
-        }
-    </style>
 </head>
 <body>
-    <div clasecond="car-info" id="placeholder1"></div>
-
 <script>
     // Задание 1
     // Создать объект, описывающий автомобиль (производитель,
@@ -29,22 +17,31 @@
     // со средней скоростью.
     // Учтите, что через каждые 4 часа дороги водителю необходимо делать перерыв на 1 час.
     
-//     function Car(model, manufacturer, year, average, distance){
-//         this.manufacturer = manufacturer;
-//         this.model = model;
-//         this.year = year;
-//         this.average = average;
-//         this.distance = distance;
+//     class Car
+//     {
+//         #manufacturer;
+//         #model;
+//         #year;
+//         #average;
+//         #distance;
 
-//         this.showInf = function(element){
-//             element.insertAdjacentHTML("beforeend", `Модель: ${this.model}<br />`);
-//             element.insertAdjacentHTML("beforeend", `Год: ${this.year}<br />`);
-//             element.insertAdjacentHTML("beforeend", `Производитель: ${this.manufacturer}<br />`);
-//             element.insertAdjacentHTML("beforeend", `Средняя скорость: ${this.average}<br />`);
+//         constructor(model, manufacturer, year, average, distance)
+//         {
+//             this.#manufacturer = manufacturer;
+//             this.#model = model;
+//             this.#year = year;
+//             this.#average = average;
+//             this.#distance = distance;
+//         }
+//        showInf(){
+//             console.log(`Модель: ${this.#model}`);
+//             console.log(`Год: ${this.#year}`);
+//             console.log(`Производитель: ${this.#manufacturer}`);
+//             console.log(`Средняя скорость: ${this.#average}`);
 //         }
 
-//         this.TimeForCar = function(element){
-//             let r = this.distance/average;
+//        TimeForCar(){
+//             let r = this.#distance/this.#average;
 //             let temp = r;
 //             do{
 //                 if(temp >= 4){
@@ -58,9 +55,9 @@
 // }
 //     let car1 = new Car("Audi", "Manufacturer", 2018, 50, 500);
 //     let rez = car1.TimeForCar();
-//     let placeholder1 = document.querySelector("#placeholder1");
-//     car1.showInf(placeholder1);
+//     car1.showInf();
 //     console.log("Time: " + rez + " hours");
+
 </script>
 
 <script>
@@ -70,43 +67,49 @@
 // 3. Функция умножения 2-х объектов-дробей.
 // 4. Функция деления 2-х объектов-дробей.
 // 5. Функция сокращения объекта-дроби.
-    // function Fraction(numer, denomin){
-    //     this.numerator = numer;
-    //     this.denominator = denomin;
 
-    //     this.Plus = function(element){
-    //         let first = this.numerator/this.denominator;
-    //         let second = element.numerator/element.denominator;
+    // class Fraction{
+    //     #numerator;
+    //     #denominator;
+
+    //     constructor(numer, denomin){
+    //         this.#numerator = numer;
+    //         this.#denominator = denomin;
+    //     }
+
+    //     Plus(element){
+    //         let first = this.#numerator/this.#denominator;
+    //         let second = element.#numerator/element.#denominator;
     //         return first+second;
     //     }
-    //     this.Minus = function(element){
-    //         let first = this.numerator/this.denominator;
-    //         let second = element.numerator/element.denominator;
+    //     Minus(element){
+    //         let first = this.#numerator/this.#denominator;
+    //         let second = element.#numerator/element.#denominator;
     //         return first-second;
     //     }
-    //     this.Multipl = function(element){
-    //         let first = this.numerator/this.denominator;
-    //         let second = element.numerator/element.denominator;
+    //     Multipl (element){
+    //         let first = this.#numerator/this.#denominator;
+    //         let second = element.#numerator/element.#denominator;
     //         return first*second;
     //     }
-    //     this.Divide = function(element){
-    //         let first = this.numerator/this.denominator;
-    //         let second = element.numerator/element.denominator;
+    //    Divide(element){
+    //         let first = this.#numerator/this.#denominator;
+    //         let second = element.#numerator/element.#denominator;
     //         return first/second;
     //     }
-    //     this.Reduce = function(element){
-    //         let first = this.numerator/this.denominator;
+    //     Reduce(element){
+    //         let first = this.#numerator/this.#denominator;
             
-    //         let max = this.numerator > this.denominator ? this.numerator : this.denominator;
-    //         let min = this.numerator < this.denominator ? this.numerator : this.denominator;
-    //         if(this.numerator % max == 0 && this.denominator % max == 0){
-    //             this.numerator /= max;
-    //             this.denominator /= max;
+    //         let max = this.#numerator > this.#denominator ? this.#numerator : this.#denominator;
+    //         let min = this.#numerator < this.#denominator ? this.#numerator : this.#denominator;
+    //         if(this.#numerator % max == 0 && this.#denominator % max == 0){
+    //             this.#numerator /= max;
+    //             this.#denominator /= max;
     //             return first;
     //         }
-    //         else if(this.numerator % min == 0 && this.denominator % min == 0){
-    //             this.numerator /= min;
-    //             this.denominator /= min;
+    //         else if(this.#numerator % min == 0 && this.#denominator % min == 0){
+    //             this.#numerator /= min;
+    //             this.#denominator /= min;
     //             return first;
     //         }
     //         else{
@@ -117,11 +120,11 @@
     // }
     // let f1 = new Fraction(2, 6);
     // let f2 = new Fraction(1,4);
-    // //console.log(f1.Plus(f2));
+    // console.log(f1.Plus(f2));
     // //console.log(f1.Minus(f2));
     // //console.log(f1.Multipl(f2));
     // //console.log(f1.Divide(f2));
-    // console.log(f1.Reduce());
+    // //console.log(f1.Reduce());
    
 </script>
 
@@ -135,7 +138,7 @@
 // 4. Функция изменения времени на переданное количество
 // часов. 
 
-    function getTimeInSeconds(a, b = 0, c = 0) {
+    function getSeconds(a, b = 0, c = 0) {
         let hoursInSeconds = Number(a) * 3600;
         let minutesInSeconds = Number(b) * 60;
         let totalSeconds = hoursInSeconds + minutesInSeconds + Number(c);
@@ -158,7 +161,7 @@
         return a + ':' + b + ':' + c;
     }
 
-    let retransmitSecondsInTime = a => {
+    let SecondsInTime = a => {
         let hour;
         let minute;
         let second;
@@ -170,9 +173,14 @@
         return formatTime(hour, minute, second);
     }
 
-    function Date(hour, minute, second) {
-            
-        if (hour < '10') 
+    class date
+    {
+        #hour = 0;
+        #minute = 0;
+        #second = 0;
+
+        constructor(hour, minute, second){
+            if (hour < '10') 
         {
             hour = '0' + hour;
         } else {
@@ -189,33 +197,33 @@
         } else {
             second = null;
         }
-
-        this.hour = hour;
-        this.minute = minute;
-        this.second = second;
-
-        this.show = function(element){
-            document.write("Time: " + this.hour + ":" + this.minute + ":" + this.second);
+        
+            this.#hour = hour;
+            this.#minute = minute;
+            this.#second = second;
+        }
+        show(){
+            console.log("Time: " + this.#hour + ":" + this.#minute + ":" + this.#second);
         }
 
-        this.addHours = function(hour) {
-            let timeinSeconds = getTimeInSeconds(this.hour, this.minute, this.second);
+        addHours (hour) {
+            let timeinSeconds = getSeconds(this.#hour, this.#minute, this.#second);
             timeinSeconds+=(hour * 3600);
-            return retransmitSecondsInTime(timeinSeconds);
+            return SecondInTime(timeinSeconds);
         }
 
-        this.addMinutes = function(minute) 
+        addMinutes(minute) 
         {
-            let timeinSeconds = getTimeInSeconds(this.hour, this.minute, this.second);
+            let timeinSeconds = getSeconds(this.#hour, this.#minute, this.#second);
             timeinSeconds+=(minute * 60);
-            return retransmitSecondsInTime(timeinSeconds);
+            return SecondInTime(timeinSeconds);
         }
 
-        this.addSeconds = function(second) 
+        addSeconds(second) 
         {
-            let timeinSeconds = getTimeInSeconds(this.hour, this.minute, this.second);
+            let timeinSeconds = getSeconds(this.#hour, this.#minute, this.#second);
             timeinSeconds+=second;
-            return retransmitSecondsInTime(timeinSeconds);
+            return SecondInTime(timeinSeconds);
         }
 
     }
@@ -225,9 +233,9 @@
     let date2 = new Date(3, 2, 1);
     let date3 = new Date();
 
-    date1.showDate();
-    date2.showDate();
-    date3.showDate();
+    // date1.show();
+    // date2.show();
+    // date3.show();
 
     console.log(date1.addHours(8));
     console.log(date2.addMinutes(45));
