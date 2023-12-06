@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .car-info {
+            display: inline-block;
+            margin: 10px 0 10px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="car-info" id="placeholder1"></div>
+
+<script>
+    // Задание 1
+    // Создать объект, описывающий автомобиль (производитель,
+    // модель, год выпуска, средняя скорость), и следующие функции
+    // для работы с этим объектом.
+
+    // 1. Функция для вывода на экран информации об автомобиле.
+    // 2. Функция для подсчета необходимого времени для преодоления переданного расстояния
+    // со средней скоростью.
+    // Учтите, что через каждые 4 часа дороги водителю необходимо делать перерыв на 1 час.
+    
+//     function Car(model, manufacturer, year, average, distance){
+//         this.manufacturer = manufacturer;
+//         this.model = model;
+//         this.year = year;
+//         this.average = average;
+//         this.distance = distance;
+
+//         this.showInf = function(element){
+//             element.insertAdjacentHTML("beforeend", `Модель: ${this.model}<br />`);
+//             element.insertAdjacentHTML("beforeend", `Год: ${this.year}<br />`);
+//             element.insertAdjacentHTML("beforeend", `Производитель: ${this.manufacturer}<br />`);
+//             element.insertAdjacentHTML("beforeend", `Средняя скорость: ${this.average}<br />`);
+//         }
+
+//         this.TimeForCar = function(element){
+//             let r = this.distance/average;
+//             let temp = r;
+//             do{
+//                 if(temp >= 4){
+//                     temp -= 4;
+//                     r++;
+//                 }
+//             }while(temp >= 4);
+
+//             return r;
+//         }
+// }
+//     let car1 = new Car("Audi", "Manufacturer", 2018, 50, 500);
+//     let rez = car1.TimeForCar();
+//     let placeholder1 = document.querySelector("#placeholder1");
+//     car1.showInf(placeholder1);
+//     console.log("Time: " + rez + " hours");
+</script>
+
+<script>
+//     Создать объект, хранящий в себе отдельно числитель и знаменатель дроби, и следующие функции для работы с этим объектом.
+// 1. Функция сложения 2-х объектов-дробей.
+// 2. Функция вычитания 2-х объектов-дробей.
+// 3. Функция умножения 2-х объектов-дробей.
+// 4. Функция деления 2-х объектов-дробей.
+// 5. Функция сокращения объекта-дроби.
+    // function Fraction(numer, denomin){
+    //     this.numerator = numer;
+    //     this.denominator = denomin;
+
+    //     this.Plus = function(element){
+    //         let first = this.numerator/this.denominator;
+    //         let second = element.numerator/element.denominator;
+    //         return first+second;
+    //     }
+    //     this.Minus = function(element){
+    //         let first = this.numerator/this.denominator;
+    //         let second = element.numerator/element.denominator;
+    //         return first-second;
+    //     }
+    //     this.Multipl = function(element){
+    //         let first = this.numerator/this.denominator;
+    //         let second = element.numerator/element.denominator;
+    //         return first*second;
+    //     }
+    //     this.Divide = function(element){
+    //         let first = this.numerator/this.denominator;
+    //         let second = element.numerator/element.denominator;
+    //         return first/second;
+    //     }
+    //     this.Reduce = function(element){
+    //         let first = this.numerator/this.denominator;
+            
+    //         let max = this.numerator > this.denominator ? this.numerator : this.denominator;
+    //         let min = this.numerator < this.denominator ? this.numerator : this.denominator;
+    //         if(this.numerator % max == 0 && this.denominator % max == 0){
+    //             this.numerator /= max;
+    //             this.denominator /= max;
+    //             return first;
+    //         }
+    //         else if(this.numerator % min == 0 && this.denominator % min == 0){
+    //             this.numerator /= min;
+    //             this.denominator /= min;
+    //             return first;
+    //         }
+    //         else{
+    //             return -1;
+    //         }
+            
+    //     }
+    // }
+    // let f1 = new Fraction(2, 6);
+    // let f2 = new Fraction(1,4);
+    // //console.log(f1.Plus(f2));
+    // //console.log(f1.Minus(f2));
+    // //console.log(f1.Multipl(f2));
+    // //console.log(f1.Divide(f2));
+    // console.log(f1.Reduce());
+   
+</script>
+
+<script>
+//  Создать объект, описывающий время (часы, минуты, секунды), и следующие функции для работы с этим объектом.
+// 1. Функция вывода времени на экран.
+// 2. Функция изменения времени на переданное количество
+// секунд.
+// 3. Функция изменения времени на переданное количество
+// минут.
+// 4. Функция изменения времени на переданное количество
+// часов. 
+
+    function Time(hour, minute, second){
+        this.hour = hour;
+        this.minute = minute;
+        this.second = second;
+
+        this.show = function(element){
+            document.write("Time: " + this.hour + ":" + this.minute + ":" + this.second);
+        }
+
+        this.changeMs = function(element){
+            this.second += element;
+            do{
+                if(this.second >= 60)
+                {
+                    this.minute++;
+                    this.second -= 60;
+                }
+            }while(this.second >= 60);
+        }
+    }
+</script>
+</body>
+</html>
