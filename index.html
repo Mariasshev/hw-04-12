@@ -16,7 +16,7 @@
     </style>
 </head>
 <body>
-    <div class="car-info" id="placeholder1"></div>
+    <div clasecond="car-info" id="placeholder1"></div>
 
 <script>
     // Задание 1
@@ -135,7 +135,61 @@
 // 4. Функция изменения времени на переданное количество
 // часов. 
 
-    function Time(hour, minute, second){
+    function getTimeInSeconds(a, b = 0, c = 0) {
+        let hoursInSeconds = Number(a) * 3600;
+        let minutesInSeconds = Number(b) * 60;
+        let totalSeconds = hoursInSeconds + minutesInSeconds + Number(c);
+        return totalSeconds;
+    }
+
+    function formatTime(a, b = 0, c = 0) {
+        if (a <= 9) {
+            a = '0' + a;
+        }
+
+        if (b <= 9) {
+            b = '0' + b;
+        }
+
+        if (c <= 9) {
+            c = '0' + c;
+        }
+
+        return a + ':' + b + ':' + c;
+    }
+
+    let retransmitSecondsInTime = a => {
+        let hour;
+        let minute;
+        let second;
+
+        hour = parseInt(a / 3600);
+        minute = parseInt((a % 3600) / 60);
+        second = parseInt(a % 60);
+
+        return formatTime(hour, minute, second);
+    }
+
+    function Date(hour, minute, second) {
+            
+        if (hour < '10') 
+        {
+            hour = '0' + hour;
+        } else {
+            hour = null;
+        }
+
+        if (minute < '10') {
+            minute = '0' + minute;
+        } else {
+            minute = null;
+        }
+        if (second < '10') {
+            second = '0' + second;
+        } else {
+            second = null;
+        }
+
         this.hour = hour;
         this.minute = minute;
         this.second = second;
@@ -144,17 +198,42 @@
             document.write("Time: " + this.hour + ":" + this.minute + ":" + this.second);
         }
 
-        this.changeMs = function(element){
-            this.second += element;
-            do{
-                if(this.second >= 60)
-                {
-                    this.minute++;
-                    this.second -= 60;
-                }
-            }while(this.second >= 60);
+        this.addHours = function(hour) {
+            let timeinSeconds = getTimeInSeconds(this.hour, this.minute, this.second);
+            timeinSeconds+=(hour * 3600);
+            return retransmitSecondsInTime(timeinSeconds);
         }
+
+        this.addMinutes = function(minute) 
+        {
+            let timeinSeconds = getTimeInSeconds(this.hour, this.minute, this.second);
+            timeinSeconds+=(minute * 60);
+            return retransmitSecondsInTime(timeinSeconds);
+        }
+
+        this.addSeconds = function(second) 
+        {
+            let timeinSeconds = getTimeInSeconds(this.hour, this.minute, this.second);
+            timeinSeconds+=second;
+            return retransmitSecondsInTime(timeinSeconds);
+        }
+
     }
+
+
+    let date1 = new Date(4, 1, 18);
+    let date2 = new Date(3, 2, 1);
+    let date3 = new Date();
+
+    date1.showDate();
+    date2.showDate();
+    date3.showDate();
+
+    console.log(date1.addHours(8));
+    console.log(date2.addMinutes(45));
+    console.log(date3.addSeconds(120));
+
+
 </script>
 </body>
 </html>
